@@ -13,6 +13,17 @@ export const Navbar: React.FC = () => {
     setIsOpen(false);
   }, [location]);
 
+  // Close menu on resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Prevent scroll when menu is open
   useEffect(() => {
     if (isOpen) {
@@ -26,6 +37,7 @@ export const Navbar: React.FC = () => {
   }, [isOpen]);
 
   const navLinks = [
+    { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Projects', path: '/projects' },
     { name: 'Services', path: '/services' },
@@ -42,16 +54,28 @@ export const Navbar: React.FC = () => {
         "relative z-[110] px-6 transition-colors duration-300",
         isOpen ? "bg-white" : "bg-transparent"
       )}>
-        <div className="max-w-7xl mx-auto h-20 flex items-center justify-between">
-          <Link to="/" className="text-lg sm:text-xl font-black tracking-tighter uppercase">
-            Tranquil Holdings
+        <div className="max-w-7xl mx-auto h-24 flex items-center justify-between">
+          <Link to="/" className="text-2xl font-light font-serif tracking-tight">
+            Tranquil <span className="font-black italic text-brand-accent">Holdings</span>
           </Link>
           
-          <div className="flex items-center gap-4 sm:gap-8">
+          <div className="flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-12">
+              {navLinks.map((link) => (
+                <Link 
+                  key={link.path} 
+                  to={link.path} 
+                  className="eyebrow hover:text-black transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+            
             {/* Hamburger Toggle */}
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 hover:bg-black/5 rounded-full transition-colors"
+              className="p-3 hover:bg-brand-stone rounded-full transition-colors lg:hidden"
               aria-label="Toggle Menu"
             >
               <AnimatePresence mode="wait">
@@ -90,7 +114,7 @@ export const Navbar: React.FC = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="fixed inset-0 bg-white z-[105] flex flex-col pt-20 shadow-2xl"
+            className="fixed inset-0 bg-white z-[105] flex flex-col pt-20 shadow-2xl lg:hidden"
           >
             <div className="flex-1 overflow-y-auto custom-scrollbar px-6 pb-12">
               <div className="max-w-7xl mx-auto w-full flex flex-col pt-12">
@@ -106,8 +130,8 @@ export const Navbar: React.FC = () => {
                         to={link.path}
                         className="group flex items-center justify-between py-4 md:py-6 border-b border-black/5"
                       >
-                        <span className="text-4xl sm:text-6xl md:text-8xl font-black tight-tracking uppercase">
-                          {link.name}
+                        <span className="text-5xl sm:text-7xl md:text-9xl font-light font-serif tracking-tight">
+                          {link.name.split(' ')[0]} <span className="font-black italic text-brand-accent">{link.name.split(' ')[1] || ''}</span>
                         </span>
                         <ArrowRight className="w-8 h-8 md:w-12 md:h-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-4 transition-all" />
                       </Link>

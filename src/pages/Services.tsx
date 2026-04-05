@@ -7,17 +7,17 @@ const ServiceCard = ({ icon: Icon, title, description, features }: { icon: any, 
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="p-12 bg-white border border-black/5 rounded-3xl shadow-sm hover:shadow-xl transition-shadow"
+    className="p-16 bg-brand-stone border border-black/5 rounded-[40px] hover:shadow-2xl transition-all duration-500 group"
   >
-    <div className="w-16 h-16 bg-black text-white rounded-2xl flex items-center justify-center mb-8">
-      <Icon className="w-8 h-8" />
+    <div className="w-20 h-20 bg-black text-white rounded-3xl flex items-center justify-center mb-12 group-hover:bg-brand-accent transition-colors">
+      <Icon className="w-10 h-10" />
     </div>
-    <h3 className="text-2xl font-bold mb-4 uppercase tracking-tighter">{title}</h3>
-    <p className="text-brand-muted text-sm leading-relaxed mb-8">{description}</p>
-    <ul className="space-y-3">
+    <h3 className="text-3xl font-light font-serif italic mb-6">{title}</h3>
+    <p className="text-brand-muted text-base leading-relaxed mb-12 font-light">{description}</p>
+    <ul className="space-y-4">
       {features.map((f, i) => (
-        <li key={i} className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-black/60">
-          <div className="w-1.5 h-1.5 bg-black rounded-full" />
+        <li key={i} className="flex items-center gap-4 eyebrow text-black/40">
+          <div className="w-2 h-2 bg-brand-accent rounded-full" />
           {f}
         </li>
       ))}
@@ -27,11 +27,11 @@ const ServiceCard = ({ icon: Icon, title, description, features }: { icon: any, 
 
 export const Services: React.FC = () => {
   return (
-    <div className="pt-40 pb-24 px-6">
+    <div className="pt-48 pb-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl md:text-8xl font-black tight-tracking mb-24">Our Services</h1>
+        <h1 className="text-7xl md:text-9xl font-light tight-tracking mb-32">Our <span className="font-black italic text-brand-accent">services</span></h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <ServiceCard 
             icon={Ruler}
             title="Architectural Design"

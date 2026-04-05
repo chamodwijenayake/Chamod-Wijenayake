@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Fraunces:opsz,wght@9..144,100;200;300;400;700;900&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", serif;
   
   --color-brand-bg: #FFFFFF;
   --color-brand-text: #000000;
   --color-brand-muted: #666666;
+  --color-brand-accent: #8C7355; /* Deep Bronze */
+  --color-brand-stone: #F9F8F6; /* Warm Stone */
 }
 
 @layer base {
@@ -14,13 +17,21 @@
     @apply bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tighter font-bold uppercase;
+  h1 {
+    @apply font-serif font-light tracking-tight;
+  }
+
+  h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-medium;
+  }
+
+  .eyebrow {
+    @apply text-[10px] font-bold uppercase tracking-[0.2em] text-brand-accent;
   }
 }
 
 .tight-tracking {
-  letter-spacing: -0.05em;
+  letter-spacing: -0.03em;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -34,4 +45,23 @@
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: #000;
   border-radius: 10px;
+}
+
+/* Fix for input autofill white background */
+.newsletter-input {
+  background-color: transparent !important;
+  color: white !important;
+  box-shadow: 0 0 0px 1000px #000 inset !important;
+}
+
+.newsletter-input:focus {
+  background-color: transparent !important;
+}
+
+.newsletter-input:-webkit-autofill,
+.newsletter-input:-webkit-autofill:hover,
+.newsletter-input:-webkit-autofill:focus,
+.newsletter-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #000 inset !important;
+  -webkit-text-fill-color: white !important;
 }
