@@ -14,7 +14,9 @@ export const ProjectDetail: React.FC = () => {
   if (!project) {
     return (
       <div className="pt-40 pb-24 px-6 text-center">
-        <h1 className="text-4xl font-black mb-8">Project Not Found</h1>
+        <h1 className="text-4xl md:text-6xl font-light mb-8">
+          Project Not <span className="font-black italic text-brand-accent">Found</span>
+        </h1>
         <Link to="/projects" className="text-brand-muted hover:text-black font-bold uppercase tracking-widest text-xs underline">
           Back to Portfolio
         </Link>
@@ -92,13 +94,13 @@ export const ProjectDetail: React.FC = () => {
         <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-8 md:px-16 pointer-events-none">
           <button 
             onClick={prevImage}
-            className="w-16 h-16 md:w-24 md:h-24 bg-white/10 backdrop-blur-2xl border border-white/20 text-white rounded-full flex items-center justify-center pointer-events-auto hover:bg-white hover:text-black transition-all opacity-0 group-hover:opacity-100 transform -translate-x-8 group-hover:translate-x-0"
+            className="w-16 h-16 md:w-24 md:h-24 bg-white/10 backdrop-blur-2xl border border-white/20 text-white rounded-full flex items-center justify-center pointer-events-auto hover:bg-white hover:text-black transition-all transform -translate-x-4 md:-translate-x-8"
           >
             <ArrowLeft className="w-8 h-8" />
           </button>
           <button 
             onClick={nextImage}
-            className="w-16 h-16 md:w-24 md:h-24 bg-white/10 backdrop-blur-2xl border border-white/20 text-white rounded-full flex items-center justify-center pointer-events-auto hover:bg-white hover:text-black transition-all opacity-0 group-hover:opacity-100 transform translate-x-8 group-hover:translate-x-0"
+            className="w-16 h-16 md:w-24 md:h-24 bg-white/10 backdrop-blur-2xl border border-white/20 text-white rounded-full flex items-center justify-center pointer-events-auto hover:bg-white hover:text-black transition-all transform translate-x-4 md:translate-x-8"
           >
             <ArrowRight className="w-8 h-8" />
           </button>

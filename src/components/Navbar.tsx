@@ -24,6 +24,17 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Handle Escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsOpen(false);
+    };
+    if (isOpen) {
+      window.addEventListener('keydown', handleEscape);
+    }
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [isOpen]);
+
   // Prevent scroll when menu is open
   useEffect(() => {
     if (isOpen) {
@@ -45,10 +56,14 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={cn(
-      "fixed top-0 left-0 w-full z-[100] transition-all duration-300 border-b border-black/5",
-      isOpen ? "bg-white shadow-md" : "bg-brand-bg/80 backdrop-blur-md"
-    )}>
+    <nav 
+      className={cn(
+        "fixed top-0 left-0 w-full z-[100] transition-all duration-300 border-b border-black/5",
+        isOpen ? "bg-white shadow-md" : "bg-brand-bg/80 backdrop-blur-md"
+      )}
+      role="navigation"
+      aria-label="Main Navigation"
+    >
       {/* Header Container - Always on top with solid background when open */}
       <div className={cn(
         "relative z-[110] px-6 transition-colors duration-300",
@@ -59,7 +74,7 @@ export const Navbar: React.FC = () => {
             Tranquil <span className="font-black italic text-brand-accent">Holdings</span>
           </Link>
           
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4 md:gap-8">
             <div className="hidden lg:flex items-center gap-12">
               {navLinks.map((link) => (
                 <Link 
@@ -71,12 +86,23 @@ export const Navbar: React.FC = () => {
                 </Link>
               ))}
             </div>
+
+            {/* Sticky Phone Number */}
+            <a 
+              href="tel:+80768698987" 
+              className="flex items-center gap-2 px-4 py-2 bg-brand-stone hover:bg-black hover:text-white transition-all rounded-full border border-black/5"
+              aria-label="Call us"
+            >
+              <Phone className="w-3 h-3 md:w-4 md:h-4" />
+              <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest hidden sm:inline">+8 (076) 869-89-87</span>
+            </a>
             
             {/* Hamburger Toggle */}
             <button 
               onClick={() => setIsOpen(!isOpen)}
               className="p-3 hover:bg-brand-stone rounded-full transition-colors lg:hidden"
-              aria-label="Toggle Menu"
+              aria-label={isOpen ? "Close Menu" : "Open Menu"}
+              aria-expanded={isOpen}
             >
               <AnimatePresence mode="wait">
                 {isOpen ? (

@@ -19,7 +19,7 @@ export const Layout: React.FC = () => {
         <Outlet />
       </main>
       <Footer />
-      <ThinkingAssistant />
+      {pathname !== '/contact' && <ThinkingAssistant />}
     </div>
   );
 };

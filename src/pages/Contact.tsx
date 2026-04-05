@@ -6,11 +6,13 @@ export const Contact: React.FC = () => {
   return (
     <div className="pt-40 pb-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl md:text-8xl font-thin tight-tracking mb-24">Get In Touch</h1>
+        <h1 className="text-6xl md:text-8xl font-light tight-tracking mb-24">
+          Get In <span className="font-black italic text-brand-accent">Touch</span>
+        </h1>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           <div className="space-y-12">
-            <p className="text-2xl leading-relaxed font-thin">
+            <p className="text-2xl leading-relaxed font-light">
               Have a visionary project in mind? We'd love to hear from you. Let's create something extraordinary together.
             </p>
             

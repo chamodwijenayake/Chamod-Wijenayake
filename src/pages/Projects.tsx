@@ -14,7 +14,9 @@ const ProjectItem = ({ id, title, category, image, year }: { id: string, title: 
     <Link to={`/projects/${id}`} className="flex flex-col md:flex-row md:items-center justify-between gap-8">
       <div className="flex-1">
         <div className="text-[10px] font-bold uppercase tracking-widest text-brand-muted mb-2">{category} — {year}</div>
-        <h2 className="text-3xl md:text-5xl font-black tight-tracking group-hover:translate-x-4 transition-transform duration-500">{title}</h2>
+        <h2 className="text-3xl md:text-5xl font-light tight-tracking group-hover:translate-x-4 transition-transform duration-500">
+          {title.split(' ')[0]} <span className="font-black italic text-brand-accent">{title.split(' ').slice(1).join(' ')}</span>
+        </h2>
       </div>
       <div className="w-full md:w-72 aspect-video overflow-hidden rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
         <img src={image} alt={title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
@@ -29,7 +31,9 @@ export const Projects: React.FC = () => {
     <div className="pt-40 pb-24 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24">
-          <h1 className="text-6xl md:text-8xl font-black tight-tracking">Portfolio</h1>
+          <h1 className="text-6xl md:text-8xl font-light tight-tracking">
+            Port<span className="font-black italic text-brand-accent">folio</span>
+          </h1>
           <div className="max-w-md space-y-6">
             <div className="text-[10px] font-bold uppercase tracking-widest text-brand-muted">Track Record</div>
             <p className="text-lg leading-relaxed text-brand-text">

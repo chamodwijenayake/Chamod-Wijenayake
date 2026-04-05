@@ -16,7 +16,8 @@ const Hero = () => (
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="text-6xl sm:text-8xl md:text-9xl lg:text-[140px] leading-[1] md:leading-[0.95] font-light tight-tracking max-w-5xl"
         >
-          Crafting <span className="font-black italic text-brand-accent inline-block mb-2 md:mb-4">serenity</span> <br />
+          Crafting <br />
+          <span className="font-black italic text-brand-accent">serenity</span> <br />
           through design
         </motion.h1>
         
@@ -25,12 +26,12 @@ const Hero = () => (
             When seeking a professional architectural design for your home, you deserve to collaborate with visionaries who deeply comprehend your lifestyle and aesthetic aspirations.
           </p>
           <div className="flex flex-wrap gap-6">
-            <button className="px-10 py-5 border border-black/20 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all text-center whitespace-nowrap">
-              Get in touch
-            </button>
-            <button className="px-10 py-5 bg-brand-accent text-white rounded-full text-[11px] font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:opacity-90 transition-all whitespace-nowrap">
-              Services <ArrowUpRight className="w-4 h-4" />
-            </button>
+            <Link to="/contact" className="px-10 py-5 bg-brand-accent text-white rounded-full text-[11px] font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:opacity-90 transition-all whitespace-nowrap">
+              Start a project <ArrowUpRight className="w-4 h-4" />
+            </Link>
+            <Link to="/services" className="px-10 py-5 border border-black/20 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all text-center whitespace-nowrap">
+              Explore Services
+            </Link>
           </div>
         </div>
       </div>
@@ -108,11 +109,6 @@ const ProjectCard = ({ id, title, category, image }: { id: string, title: string
           className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center backdrop-blur-sm">
-          <button className="bg-white text-black px-10 py-4 rounded-full text-[11px] font-bold uppercase tracking-[0.2em]">
-            View Project
-          </button>
-        </div>
       </div>
       <div className="flex justify-between items-start px-2">
         <div>
@@ -303,11 +299,9 @@ export const Home: React.FC = () => {
   return (
     <>
       <Hero />
-      <Press />
       <Stats />
       <FeaturedProjects />
       <DesignProcess />
-      <Testimonials />
     </>
   );
 };
