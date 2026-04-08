@@ -36,8 +36,8 @@ export const Footer: React.FC = () => (
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-16 mb-20">
-        <div className="col-span-1 sm:col-span-2 lg:col-span-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-16 mb-20">
+        <div className="col-span-1 sm:col-span-2">
           <div className="text-2xl font-light font-serif tracking-tight mb-8 text-white">
             Tranquil <span className="font-black italic text-brand-accent">Holdings</span>
           </div>

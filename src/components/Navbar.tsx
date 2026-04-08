@@ -156,7 +156,7 @@ export const Navbar: React.FC = () => {
                         to={link.path}
                         className="group flex items-center justify-between py-4 md:py-6 border-b border-black/5"
                       >
-                        <span className="text-5xl sm:text-7xl md:text-9xl font-light font-serif tracking-tight">
+                        <span className="text-4xl sm:text-7xl md:text-9xl font-light font-serif tracking-tight">
                           {link.name.split(' ')[0]} <span className="font-black italic text-brand-accent">{link.name.split(' ')[1] || ''}</span>
                         </span>
                         <ArrowRight className="w-8 h-8 md:w-12 md:h-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-4 transition-all" />

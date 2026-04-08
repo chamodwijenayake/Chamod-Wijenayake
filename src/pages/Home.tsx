@@ -14,7 +14,7 @@ const Hero = () => (
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="text-6xl sm:text-8xl md:text-9xl lg:text-[140px] leading-[1] md:leading-[0.95] font-light tight-tracking max-w-5xl"
+          className="text-5xl sm:text-7xl md:text-9xl lg:text-[140px] leading-[1] md:leading-[0.95] font-light tight-tracking max-w-5xl"
         >
           Crafting <br />
           <span className="font-black italic text-brand-accent">serenity</span> <br />
@@ -56,11 +56,11 @@ const Hero = () => (
 const Stats = () => (
   <section className="py-24 px-6 border-y border-black/5 overflow-hidden">
     <div className="max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 mb-24 md:mb-32">
-        <h2 className="text-5xl md:text-6xl font-light tight-tracking max-w-lg leading-tight">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 mb-16 md:mb-32">
+        <h2 className="text-4xl md:text-6xl font-light tight-tracking max-w-lg leading-tight">
           We have created more than <span className="font-serif italic text-brand-accent">700</span> unique designs
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 text-base text-brand-muted leading-relaxed font-light">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 text-base text-brand-muted leading-relaxed font-light">
           <p>
             We are a team of passionate and creative architects dedicated to transforming spaces into beautiful and functional environments. We specialize in developing innovative as well as sustainable spaces that reflect unique character.
           </p>
@@ -70,7 +70,7 @@ const Stats = () => (
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 border-l border-t border-black/10">
+      <div className="grid grid-cols-2 lg:grid-cols-4 border-l border-t border-black/10">
         {[
           { label: "Years of experience", value: "10+" },
           { label: "Completed projects", value: "212+" },
@@ -83,9 +83,9 @@ const Stats = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: i * 0.1 }}
-            className="aspect-square border-r border-b border-black/10 flex flex-col items-center justify-center text-center p-8 sm:p-12"
+            className="aspect-square border-r border-b border-black/10 flex flex-col items-center justify-center text-center p-6 sm:p-12"
           >
-            <div className="text-5xl sm:text-6xl md:text-7xl font-light mb-4 tight-tracking leading-none">
+            <div className="text-4xl sm:text-6xl md:text-7xl font-light mb-4 tight-tracking leading-none">
               <Counter value={stat.value} />
             </div>
             <div className="eyebrow max-w-[120px]">{stat.label}</div>
@@ -126,8 +126,8 @@ const ProjectCard = ({ id, title, category, image }: { id: string, title: string
 const FeaturedProjects = () => (
   <section className="py-24 px-6">
     <div className="max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row md:items-start justify-between gap-12 mb-24">
-        <h2 className="text-5xl md:text-6xl font-light tight-tracking">Featured projects</h2>
+      <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-12 mb-16 md:mb-24">
+        <h2 className="text-4xl md:text-6xl font-light tight-tracking">Featured projects</h2>
         <p className="max-w-md text-base text-brand-muted leading-relaxed font-light">
           Each project is uniquely crafted to meet the specific needs of our clients. Whether big or small, we are prepared to tackle any type of project with enthusiasm and expertise.
         </p>
@@ -149,12 +149,12 @@ const FeaturedProjects = () => (
 );
 
 const DesignProcess = () => (
-  <section className="py-32 px-6 border-t border-black/5">
+  <section className="py-24 md:py-32 px-6 border-t border-black/5">
     <div className="max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div>
           <div className="eyebrow mb-8">Our Process</div>
-          <h2 className="text-5xl md:text-7xl font-light tight-tracking mb-12 leading-tight">
+          <h2 className="text-4xl md:text-7xl font-light tight-tracking mb-12 leading-tight">
             From initial <span className="font-serif italic text-brand-accent">vision</span> to final outcome
           </h2>
           <div className="space-y-12">

@@ -54,25 +54,25 @@ const ServiceSection = ({ service, index }: { service: typeof services[0], index
     >
       <div className="max-w-7xl mx-auto">
         <div className={cn(
-          "grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-32 items-center",
+          "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-center",
           !isEven && "lg:flex-row-reverse"
         )}>
           <div className={cn(
-            "space-y-12",
+            "space-y-8 md:space-y-12",
             !isEven && "lg:order-2"
           )}>
             <div className="flex items-center gap-6">
-              <div className="w-16 h-16 bg-black text-white rounded-2xl flex items-center justify-center">
-                <service.icon className="w-8 h-8" />
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-black text-white rounded-2xl flex items-center justify-center">
+                <service.icon className="w-6 h-6 md:w-8 md:h-8" />
               </div>
               <div className="eyebrow text-brand-accent">Service 0{index + 1}</div>
             </div>
             
-            <h2 className="text-5xl md:text-7xl font-light font-serif tight-tracking leading-tight">
+            <h2 className="text-4xl md:text-7xl font-light font-serif tight-tracking leading-tight">
               {service.title.split(' ')[0]} <span className="font-black italic text-brand-accent">{service.title.split(' ').slice(1).join(' ')}</span>
             </h2>
             
-            <p className="text-xl md:text-2xl text-brand-muted leading-relaxed font-light max-w-xl">
+            <p className="text-lg md:text-2xl text-brand-muted leading-relaxed font-light max-w-xl">
               {service.description}
             </p>
             
@@ -138,8 +138,8 @@ export const Services: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="eyebrow text-white/80 mb-8 tracking-[0.4em]">Our Expertise</div>
-            <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[140px] font-light text-white tight-tracking leading-[0.9]">
+            <div className="eyebrow text-white/80 mb-6 md:mb-8 tracking-[0.4em]">Our Expertise</div>
+            <h1 className="text-5xl sm:text-8xl md:text-9xl lg:text-[140px] font-light text-white tight-tracking leading-[0.9]">
               Elevating <br />
               <span className="font-black italic text-brand-accent">standards</span>
             </h1>
@@ -153,15 +153,15 @@ export const Services: React.FC = () => {
       ))}
 
       {/* Final CTA Section */}
-      <section className="py-40 px-6 bg-black text-white text-center">
-        <div className="max-w-3xl mx-auto space-y-12">
-          <h2 className="text-5xl md:text-7xl font-light font-serif tight-tracking">
+      <section className="py-24 md:py-40 px-6 bg-black text-white text-center">
+        <div className="max-w-3xl mx-auto space-y-8 md:space-y-12">
+          <h2 className="text-4xl md:text-7xl font-light font-serif tight-tracking">
             Let's build your <span className="font-black italic text-brand-accent">legacy</span>
           </h2>
-          <p className="text-xl text-gray-400 font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
             Our team is ready to bring your vision to life with the perfect blend of architectural precision and artistic soul.
           </p>
-          <button className="px-16 py-8 bg-brand-accent text-white rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:opacity-90 transition-all">
+          <button className="px-12 md:px-16 py-6 md:py-8 bg-brand-accent text-white rounded-full text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] hover:opacity-90 transition-all">
             Start a conversation
           </button>
         </div>

@@ -4,15 +4,15 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   return (
-    <div className="pt-40 pb-24 px-6">
+    <div className="pt-32 md:pt-40 pb-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl md:text-8xl font-light tight-tracking mb-24">
+        <h1 className="text-5xl md:text-8xl font-light tight-tracking mb-16 md:mb-24">
           Get In <span className="font-black italic text-brand-accent">Touch</span>
         </h1>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
-          <div className="space-y-12">
-            <p className="text-2xl leading-relaxed font-light">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          <div className="space-y-8 md:space-y-12">
+            <p className="text-xl md:text-2xl leading-relaxed font-light">
               Have a visionary project in mind? We'd love to hear from you. Let's create something extraordinary together.
             </p>
             
@@ -64,7 +64,7 @@ export const Contact: React.FC = () => {
               <label className="text-[10px] font-bold uppercase tracking-widest text-brand-muted">Your Message</label>
               <textarea rows={4} className="w-full bg-white border-b border-black/10 py-4 px-6 focus:outline-none focus:border-black transition-colors resize-none rounded-t-lg text-brand-muted autofill:shadow-[0_0_0_1000px_#fff_inset] autofill:text-brand-muted" placeholder="Tell us about your project..." />
             </div>
-            <button className="w-fit bg-black text-white py-6 px-12 rounded-2xl font-thin uppercase tracking-widest flex items-center justify-center gap-3 hover:opacity-80 transition-opacity">
+            <button className="w-full sm:w-fit bg-black text-white py-6 px-12 rounded-2xl font-thin uppercase tracking-widest flex items-center justify-center gap-3 hover:opacity-80 transition-opacity">
               Send Message <Send className="w-4 h-4" />
             </button>
           </motion.form>
@@ -74,9 +74,9 @@ export const Contact: React.FC = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-32"
+          className="mt-24 md:mt-32"
         >
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-12">
             <h2 className="text-4xl md:text-6xl font-thin tight-tracking">Our Location</h2>
             <div className="max-w-xs text-sm text-brand-muted leading-relaxed">
               Visit our headquarters in the heart of the Architecture District. We welcome visionary minds.

@@ -11,14 +11,14 @@ const ProjectItem = ({ id, title, category, image, year }: { id: string, title: 
     viewport={{ once: true }}
     className="group border-b border-black/10 py-12"
   >
-    <Link to={`/projects/${id}`} className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+    <Link to={`/projects/${id}`} className="flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-8">
       <div className="flex-1">
         <div className="text-[10px] font-bold uppercase tracking-widest text-brand-muted mb-2">{category} — {year}</div>
-        <h2 className="text-3xl md:text-5xl font-light tight-tracking group-hover:translate-x-4 transition-transform duration-500">
+        <h2 className="text-3xl md:text-5xl font-light font-serif tight-tracking group-hover:translate-x-0 md:group-hover:translate-x-4 transition-transform duration-500">
           {title.split(' ')[0]} <span className="font-black italic text-brand-accent">{title.split(' ').slice(1).join(' ')}</span>
         </h2>
       </div>
-      <div className="w-full md:w-72 aspect-video overflow-hidden rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
+      <div className="w-full md:w-72 aspect-video overflow-hidden rounded-xl shadow-lg md:opacity-0 group-hover:opacity-100 transition-all duration-500 md:scale-90 group-hover:scale-100">
         <img src={image} alt={title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
       </div>
       <ArrowUpRight className="w-8 h-8 group-hover:rotate-45 transition-transform duration-500" />
@@ -28,10 +28,10 @@ const ProjectItem = ({ id, title, category, image, year }: { id: string, title: 
 
 export const Projects: React.FC = () => {
   return (
-    <div className="pt-40 pb-24 px-6">
+    <div className="pt-32 md:pt-40 pb-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-24">
-          <h1 className="text-6xl md:text-8xl font-light tight-tracking">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-16 md:mb-24">
+          <h1 className="text-5xl md:text-8xl font-light font-serif tight-tracking">
             Port<span className="font-black italic text-brand-accent">folio</span>
           </h1>
           <div className="max-w-md space-y-6">
