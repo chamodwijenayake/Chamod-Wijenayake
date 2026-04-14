@@ -78,7 +78,10 @@ export const Footer: React.FC = () => (
           <a href="#" className="hover:text-white transition-colors"><Twitter className="w-4 h-4" /></a>
           <a href="#" className="hover:text-white transition-colors"><Facebook className="w-4 h-4" /></a>
         </div>
-        <div>© 2026 Tranquil Holdings. All rights reserved.</div>
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+          <span>Made thoughtfully with Outcore Labs</span>
+          <span>© 2026 Tranquil Holdings. All rights reserved.</span>
+        </div>
       </div>
     </div>
   </footer>

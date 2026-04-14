@@ -8,19 +8,23 @@ import { Services } from './pages/Services';
 import { Contact } from './pages/Contact';
 import { ProjectDetail } from './pages/ProjectDetail';
 
+import { SmoothScroll } from './components/SmoothScroll';
+
 export default function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="projects/:id" element={<ProjectDetail />} />
-          <Route path="services" element={<Services />} />
-          <Route path="contact" element={<Contact />} />
-        </Route>
-      </Routes>
+      <SmoothScroll>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="projects/:id" element={<ProjectDetail />} />
+            <Route path="services" element={<Services />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+        </Routes>
+      </SmoothScroll>
     </Router>
   );
 }
